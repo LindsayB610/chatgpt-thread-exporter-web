@@ -1,0 +1,251 @@
+:root {
+  color-scheme: light;
+  font-family:
+    "IBM Plex Sans",
+    "Avenir Next",
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #182028;
+  background:
+    radial-gradient(circle at top, rgba(250, 216, 169, 0.8), transparent 34%),
+    linear-gradient(180deg, #f7efe6 0%, #f3f6f8 46%, #e4edf2 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: #ffffff;
+  --border: rgba(24, 32, 40, 0.12);
+  --accent: #0c6d62;
+  --accent-strong: #084b44;
+  --muted: #5e6a73;
+  --shadow: 0 20px 60px rgba(33, 43, 54, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 32px 20px 48px;
+}
+
+.app-card {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.hero,
+.panel {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 36px;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.2rem, 5vw, 4.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  max-width: 10ch;
+}
+
+.hero-copy {
+  margin-bottom: 0;
+  max-width: 55ch;
+  color: var(--muted);
+  font-size: 1.03rem;
+}
+
+.export-form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 10px;
+}
+
+.field-label {
+  font-weight: 700;
+}
+
+.text-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+}
+
+.text-input:focus,
+.format-option:has(input:focus-visible),
+.primary-button:focus-visible,
+.secondary-button:focus-visible {
+  outline: 3px solid rgba(12, 109, 98, 0.24);
+  outline-offset: 2px;
+}
+
+.format-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.format-option {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.format-option:hover {
+  transform: translateY(-1px);
+}
+
+.format-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.format-option.is-selected {
+  border-color: rgba(12, 109, 98, 0.45);
+  background: rgba(219, 244, 239, 0.92);
+}
+
+.format-title {
+  font-weight: 700;
+}
+
+.format-description,
+.technical-note,
+.status-panel p,
+.result-panel p,
+.privacy-panel p {
+  color: var(--muted);
+}
+
+.primary-button,
+.secondary-button {
+  width: fit-content;
+  min-width: 180px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+.secondary-button {
+  background: #182028;
+  color: white;
+  font-weight: 700;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: none;
+}
+
+.status-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 20px 14px 32px;
+  }
+
+  .hero,
+  .panel {
+    border-radius: 22px;
+  }
+
+  .hero {
+    padding: 28px 24px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .format-grid,
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
