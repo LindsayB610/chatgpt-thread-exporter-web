@@ -1,4 +1,19 @@
-# v1.3 Frontend Plan
+# v1.3 Frontend Plan (historical and superseded)
+
+> [!CAUTION]
+> This plan is retained only as historical context. **Do not implement or
+> deploy it.** The separate Vite/Netlify application and
+> `exporter.lindsaybrunner.com` architecture described below were superseded.
+>
+> The production AI Chat Exporter lives in the
+> [Lindsay-Brunner-Website](https://github.com/LindsayB610/Lindsay-Brunner-Website)
+> repository at
+> [https://lindsaybrunner.com/ai-chat-exporter/](https://lindsaybrunner.com/ai-chat-exporter/).
+> That repository owns the Hugo route, React island, Netlify Function,
+> deployment configuration, and tests.
+
+Everything below this notice describes the abandoned prototype plan and is not
+current implementation guidance.
 
 ## Purpose
 

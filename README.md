@@ -1,41 +1,20 @@
-# chatgpt-thread-exporter web
+# chatgpt-thread-exporter web (deprecated)
 
-This repo is the v1.3 frontend for `chatgpt-thread-exporter`.
+> [!WARNING]
+> This repository is an archived frontend prototype. **Do not deploy it.**
 
-It is intentionally separate from the Hugo site and shaped for Netlify deployment.
+The production AI Chat Exporter is part of the main
+[Lindsay-Brunner-Website](https://github.com/LindsayB610/Lindsay-Brunner-Website)
+repository and lives at
+[https://lindsaybrunner.com/ai-chat-exporter/](https://lindsaybrunner.com/ai-chat-exporter/).
 
-## Current state
+That implementation owns the Hugo route, React island, Netlify Function,
+deployment configuration, and tests. The separate Vite/Netlify application and
+`exporter.lindsaybrunner.com` deployment described in this repository were
+superseded and are not the production architecture.
 
-The first scaffold includes:
-
-- Vite + React + TypeScript app shell
-- Netlify config with `dist` as the publish directory
-- MVP export form for shared-link input and Markdown/PDF choice
-- local mock export flow to prove download UX before the real engine bridge lands
-
-## Local run
-
-Install and use the Node version declared in `.nvmrc`:
-
-```bash
-nvm install
-```
-
-Then install the locked dependencies and start Vite:
-
-```bash
-npm ci
-npm run dev
-```
-
-Open the local Vite URL shown in the terminal.
-
-For a Netlify-shaped local run:
-
-```bash
-npm run dev:netlify
-```
-
-## Next step
-
-Replace the mock export service in `src/lib/exporter.ts` with a thin backend call or a direct shared-engine integration, depending on which path we choose for the production export runtime.
+This repository remains available only as historical prototype code. The CLI
+source remains in
+[chatgpt-thread-exporter](https://github.com/LindsayB610/chatgpt-thread-exporter).
+The abandoned design is preserved only for provenance in
+[`HISTORICAL_V13_FRONTEND_PLAN.md`](./HISTORICAL_V13_FRONTEND_PLAN.md).
