@@ -15,8 +15,16 @@ The first scaffold includes:
 
 ## Local run
 
+Install and use the Node version declared in `.nvmrc`:
+
 ```bash
-npm install
+nvm install
+```
+
+Then install the locked dependencies and start Vite:
+
+```bash
+npm ci
 npm run dev
 ```
 
